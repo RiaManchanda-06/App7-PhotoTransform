@@ -109,10 +109,15 @@ const originalImageData = context.getImageData(0,0,600,500);
 const data = processedImageData.data;
  // this will loop through every single pixel in this image
  for (let i = 0; i < data.length; i +=4) {
+data[i] = 0; // sets the red channel to a zero
+data[i + 1] = 0; // sets the green channel to a zero
+// blue channel code will preserve the blue color for the app
+ }
+ // after processing is completed the image data on the second canvas
+  context2.putImageData(processedImageData, 0, 0); 
+  // image is inserted with only blue pixels
   
-          
-          
-          
+                   
         } // end of img.onload
         
         img.src = reader.result;
