@@ -101,7 +101,15 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-          
+ // this will be the code that refrences the second canvas element
+ var canvas2 = document.getElementById('canvas2');
+ // this will be the code that will get all the image data from the (orginal image)
+const originalImageData = context.getImageData(0,0,600,500); 
+ // this will give us the access needed to the pixel array of our copied image
+const data = processedImageData.data;
+ // this will loop through every single pixel in this image
+ for (let i = 0; i < data.length; i +=4) {
+  
           
           
           
