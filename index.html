@@ -105,10 +105,12 @@
  var canvas2 = document.getElementById('canvas2');
  // this will be the code that will get all the image data from the (orginal image)
 const originalImageData = context.getImageData(0,0,600,500); 
+ // copies the original image data so there doesn't have to be rewritten original image  canvas
+const data = processedImageData = new ImageData(new Uint8ClampedArray(originalImageData.data), originalImageData.width, originalImageData.height);
  // this will give us the access needed to the pixel array of our copied image
-const data = processedImageData.data;
+ const data = processedImageData.data;
  // this will loop through every single pixel in this image
- for (let i = 0; i < data.length; i +=4) {
+for (let i = 0; i < data.length; i +=4) {
 data[i] = 0; // sets the red channel to a zero
 data[i + 1] = 0; // sets the green channel to a zero
 // blue channel code will preserve the blue color for the app
