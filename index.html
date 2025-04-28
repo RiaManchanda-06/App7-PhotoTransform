@@ -107,6 +107,7 @@
 const originalImageData = context.getImageData(0,0,600,500); 
  // copies the original image data so there doesn't have to be rewritten original image  canvas
 const data = processedImageData = new ImageData(new Uint8ClampedArray(originalImageData.data), originalImageData.width, originalImageData.height);
+const data = processedImageData.data;
  // this will give us the access needed to the pixel array of our copied image
  const data = processedImageData.data;
  // this will loop through every single pixel in this image
@@ -158,13 +159,13 @@ data[i + 1] = 0; // sets the green channel to a zero
         context.fillText("Original image will go here", 10, 20); // this is the code that draws the placeholder text
       </script>
     
-     canvas id="canvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+     <canvas id="canvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('canvas2'); // this refrences the first canvas
-        var context = canvas2.getContext("2d"); // gets 2D drawing context
-        context.font = '20pt Calibri'; // this code sets the font color, same as canvas 1
-        context.fillStyle = "black"; // this is the code that will set the text color, same as canvas 1
-        context.fillText("Filtered image's location", 10, 20); // this is the code that draws the placeholder text
+        var canvas2 = document.getElementById('canvas2'); // this refrences the first canvas
+        var context2 = canvas2.getContext("2d"); // gets 2D drawing context
+        context2.font = '20pt Calibri'; // this code sets the font color, same as canvas 1
+        context2.fillStyle = "black"; // this is the code that will set the text color, same as canvas 1
+        context2.fillText("Filtered image's location", 10, 20); // this is the code that draws the placeholder text
       </script>
 
      
